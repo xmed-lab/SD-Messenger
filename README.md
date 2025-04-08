@@ -15,7 +15,7 @@ Image Segmentation </h1>
 </div>
 
 ## :rocket: Updates & Todo List
-
+:hammer_and_wrench: There are still many TODOs, we will update the final version ASAP.
 - [x] Create the repository and the ReadMe Template
 - [ ] Release the training and testing codes for S&D-Messenger
 - [ ] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms, AMOS)
