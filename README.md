@@ -15,7 +15,7 @@ Image Segmentation </h1>
 </div>
 
 ## :rocket: Updates & Todo List
-:hammer_and_wrench: There are still many TODOs, we will update the final version ASAP.
+:bangbang: IMPORTANT: This version is not the final version. There are still a lot of todos. We will release the final version ASAP. Sorry for any inconvenience this may cause.
 - [x] Create the repository and the ReadMe Template
 - [ ] Release the training and testing codes for S&D-Messenger
 - [ ] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms, AMOS)
@@ -24,10 +24,10 @@ Image Segmentation </h1>
 - [ ] Release the model weights for LASeg (5%, 10%)
 - [ ] Release the model weights for M&Ms (Domain A, Domain B, Domain C, Domain D)
 
-## :star: Highlights of S&D-Messenger
+## :star: Introduction
+![framework](./figs/framework.png "framework")
+SSMIS has emerged as a promising solution to tackle the challenges of time-consuming manual labeling in the medical field. However, in practical scenarios, there are often domain variations within the datasets, leading to derivative scenarios like Semi-MDG and UMDA. We aim to develop a generic framework that masters all three tasks. We notice a critical shared challenge across three scenarios: the explicit semantic knowledge for segmentation performance and rich domain knowledge for generalizability exclusively exist in the labeled set and unlabeled set respectively. Such discrepancy hinders existing methods from effectively comprehending both types of knowledge under semi-supervised settings. To tackle this challenge, we develop a Semantic & Domain Knowledge Messenger (S&D Messenger) which facilitates direct knowledge delivery between the labeled and unlabeled set, and thus allowing the model to comprehend both of them in each individual learning flow. Equipped with our S&D Messenger, a naive pseudo-labeling method can achieve huge improvement on ten benchmark datasets for SSMIS (+7.5%), UMDA (+5.6%), and Semi-MDG tasks (+1.14%), compared with SOTA methods designed for specific tasks.
 
-- S&D-Messenger attains SoTA performance simultaneously in SSMIS, UMDA, Semi-MDG
-- S&D-Messenger can be seaminglessly integrated to different Transformer Blocks
 
 ## :hammer: Installation
 - Main python libraries of our experimental environment are shown in [requirements.txt](./requirements.txt). You can install S&D-Messenger following:
@@ -182,6 +182,11 @@ bash scripts/test_mm.sh ${GPU_NUM} ${PORT}
     </tr>
 
 </table>
+
+## :dart: Results
+![fig_1](./figs/fig_1.jpg "fig_1")
+![fig_2](./figs/fig_2.jpg "fig_2")
+![fig_3](./figs/fig_3.jpg "fig_3")
 
 ## :books: Citation
 
