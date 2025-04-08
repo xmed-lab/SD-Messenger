@@ -5,8 +5,8 @@ Image Segmentation </h1>
 </div>
 <div align=center>
 
-<a src="https://img.shields.io/badge/%F0%9F%93%96-ICCV_2023-red.svg?style=flat-square" href="https://arxiv.org/abs/2407.07763">
-<img src="https://img.shields.io/badge/build-AcceptWithMinor-brightgreen?style=flat-square&label=TMI&color=red">
+<a src="https://img.shields.io/badge/arxiv-red" href="https://arxiv.org/abs/2407.07763">
+<img src="https://img.shields.io/badge/arxiv-red">
 </a>
 
 <a src="https://img.shields.io/badge/%F0%9F%9A%80-xmed_Lab-ed6c00.svg?style=flat-square" href="https://xmengli.github.io/">
