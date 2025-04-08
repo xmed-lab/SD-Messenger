@@ -3,7 +3,7 @@
 Knowledge for Generic Semi-Supervised Medical
 Image Segmentation </h1>
 </div>
-<div align=center>
+<div align=left>
 
 <a src="https://img.shields.io/badge/arxiv-red" href="https://arxiv.org/abs/2407.07763">
 <img src="https://img.shields.io/badge/arxiv-red">
