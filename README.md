@@ -176,7 +176,7 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
     </tr>
   <tr align="center">
         <td> Training Logs </td>
-        <td><a href="#">log</a></td>
+        <td><a href="./SD_Messenger/logs/synapse_1_5.log">log</a></td>
         <td><a href="#">log</a></td>
         <td><a href="#">log</a></td>
         <td><a href="#">log</a></td>
