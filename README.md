@@ -163,7 +163,7 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
     </tr>
    <tr align="center">
         <td> Model Weights </td>
-        <td><a href="#">weight</a></td>
+        <td><a href="https://hkustconnect-my.sharepoint.com/:u:/g/personal/qzhangcq_connect_ust_hk/EUoLLi0XMq5Kp4pvE0XcMaMBq-BESh_kdgDqVatvn5wjvw?e=QIFhhf">weight</a></td>
         <td><a href="#">weight</a></td>
         <td><a href="#">weight</a></td>
         <td><a href="#">weight</a></td>
