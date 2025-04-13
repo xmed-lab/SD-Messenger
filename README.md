@@ -18,7 +18,7 @@ Image Segmentation </h1>
 :bangbang: IMPORTANT: This version is not the final version. There are still a lot of todos. We will release the final version ASAP. Sorry for any inconvenience this may cause.
 - [x] Create the repository and the ReadMe Template
 - [x] Release the training and testing codes for S&D-Messenger
-- [ ] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms, AMOS)
+- [x] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms)
 - [ ] Release the model weights for Synapse dataset (20%, 40% labeled)
 - [ ] Release the model weights for MMWHS (CT2MRI, MRI2CT)
 - [ ] Release the model weights for LASeg (5%, 10%)
