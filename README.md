@@ -68,10 +68,10 @@ Download the pre-processed datasets and splits from the following links:
         <td><a href="./SD_Messenger/splits/synapse/2_5/">40%</a></td>
         <td><a href="#">CT2MRI</a></td>
         <td><a href="#">MRI2CT</a></td>
-        <td><a href="#">DA</a></td>
-        <td><a href="#">DB</a></td>
-        <td><a href="#">DC</a></td>
-        <td><a href="#">DD</a></td>
+        <td><a href="#">Do. A</a></td>
+        <td><a href="#">Do. B</a></td>
+        <td><a href="#">Do. C</a></td>
+        <td><a href="#">Do. D</a></td>
         <td><a href="#">5%</a></td>
         <td><a href="#">10%</a></td>
     </tr>
@@ -138,10 +138,10 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
         <td>40%</td>
         <td>CT2MRI</td>
         <td>MRI2CT</td>
-        <td>Domain A</td>
-        <td>Domain B</td>
-        <td>Domain C</td>
-        <td>Domain D</td>
+        <td>Do. A</td>
+        <td>Do. B</td>
+        <td>Do. C</td>
+        <td>Do. D</td>
 				<td>5%</td>
         <td>10%</td>
     </tr>
