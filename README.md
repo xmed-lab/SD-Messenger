@@ -27,7 +27,7 @@ SSMIS has emerged as a promising solution to tackle the challenges of time-consu
 
 
 ## :hammer: Installation
-- Main python libraries of our experimental environment are shown in [requirements.txt](./requirements.txt). You can install S&D-Messenger following:
+- Main python libraries of our experimental environment are shown in [requirements.txt](.SD_Messenger/requirements.txt). You can install S&D-Messenger by following:
 ```shell
 git clone https://github.com/xmed-lab/SD-Messenger.git
 cd SD_Messenger
