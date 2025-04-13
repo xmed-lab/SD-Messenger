@@ -113,13 +113,13 @@ bash scripts/train_mm.sh ${GPU_NUM} ${PORT}
 - Train S&D-Messenger on Synapse, LASeg, MMWHS, M&Ms datasets:
 ```shell
 # Synapse Dataset
-bash scripts/test_synapse.sh ${GPU_NUM} ${PORT}
+bash scripts/test_synapse.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 # LASeg Dataset
-bash scripts/test_laseg.sh ${GPU_NUM} ${PORT}
+bash scripts/test_laseg.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 # MMWHS Dataset
-bash scripts/test_mmwhs.sh ${GPU_NUM} ${PORT}
+bash scripts/test_mmwhs.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 # M&Ms Dataset
-bash scripts/test_mm.sh ${GPU_NUM} ${PORT}
+bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 ```
 
 
