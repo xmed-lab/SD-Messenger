@@ -120,7 +120,7 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 ```
 
 
-## :blue_book: Reproduced Results
+## :blue_book: Model Weights and Logs
 
 ***To improve the reproducibility of the results, we have shared the trained model weights and training logs for your reference.***
 
