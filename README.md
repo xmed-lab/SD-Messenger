@@ -46,10 +46,10 @@ Download the pre-processed datasets and splits from the following links:
 <table>
     <tr align="center">
         <td>Dataset</td>
-        <td colspan="2">Synapse Dataset</td>
-        <td colspan="2">MMWHS Dataset</td>
-        <td colspan="4">M&Ms Dataset</a></td>
-        <td colspan="2">LASeg Dataset</td>
+        <td colspan="2">Synapse</td>
+        <td colspan="2">MMWHS</td>
+        <td colspan="4">M&Ms</td>
+        <td colspan="2">LASeg</td>
     </tr>
     <tr align="center">
         <td>Paper Link</td>
@@ -71,10 +71,10 @@ Download the pre-processed datasets and splits from the following links:
         <td><a href="./SD_Messenger/splits/synapse/2_5/">40%</a></td>
         <td><a href="#">CT2MRI</a></td>
         <td><a href="#">MRI2CT</a></td>
-        <td><a href="#">Domain A</a></td>
-        <td><a href="#">Domain B</a></td>
-        <td><a href="#">Domain C</a></td>
-        <td><a href="#">Domain D</a></td>
+        <td><a href="#">DA</a></td>
+        <td><a href="#">DB</a></td>
+        <td><a href="#">DC</a></td>
+        <td><a href="#">DD</a></td>
         <td><a href="#">5%</a></td>
         <td><a href="#">10%</a></td>
     </tr>
