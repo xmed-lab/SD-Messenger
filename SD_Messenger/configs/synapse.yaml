@@ -2,20 +2,18 @@
 dataset: synapse
 nclass: 14
 crop_size: 512
-cut_mix_size: 64
+l2u_size: 64
 data_root: ./synapse
 
 # arguments for training
 epochs: 300
-batch_size: 2 # per GPU x 4 GPUs
+batch_size: 8 # per GPU
 lr: 0.001
 lr_multi: 5.0
 criterion:
   name: CELoss
   kwargs:
     ignore_index: 255
-
-
 
 criterion_u:
   name: CELoss
@@ -29,8 +27,8 @@ model:
     kwargs:
       embed_dims: [64, 128, 320, 512]
       pretrained: True
-  transformer:
-    type: model.semseg.sd_messenger.SDMessengerTransformer
+  framework:
+    type: model.semseg.sd_messenger.SDMessenger
     kwargs:
       num_layers: 2
       num_heads: 2

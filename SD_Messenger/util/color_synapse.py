@@ -21,8 +21,8 @@ def main():
     os.makedirs('../synapse_vis/masked_img', exist_ok=True)
     os.makedirs('../synapse_vis/masked_img_trans', exist_ok=True)
     for label_path in tqdm(glob.glob(os.path.join("../../UniMatch/synapse/synapse_anno/", '*.png'))):
-        img_path = os.path.join("../../UniMatch/synapse/synapse_or/", os.path.basename(label_path)).replace('label',
-                                                                                                            'img')
+
+        img_path = os.path.join("../../UniMatch/synapse/synapse_or/", os.path.basename(label_path)).replace('label', 'img')
         masked_img_path = os.path.join('../synapse_vis/masked_img_trans', os.path.basename(label_path))
         img_gray = cv2.imread(img_path, 0)
         mask = cv2.imread(label_path, 0)
@@ -56,6 +56,7 @@ def main():
 
 
 def vis_save(original_img, pred, save_path):
+
     blue = [30, 144, 255]  # aorta
     green = [0, 255, 0]  # gallbladder
     red = [255, 0, 0]  # left kidney
@@ -75,37 +76,23 @@ def vis_save(original_img, pred, save_path):
     original_img = cv2.cvtColor(original_img, cv2.COLOR_GRAY2BGR)
     pred = cv2.cvtColor(pred, cv2.COLOR_GRAY2BGR)
     alpha = 0.2
-    original_img = np.where(pred == 1, alpha * np.full_like(original_img, blue) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 2, alpha * np.full_like(original_img, green) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 3, alpha * np.full_like(original_img, red) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 4, alpha * np.full_like(original_img, cyan) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 5, alpha * np.full_like(original_img, pink) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 6, alpha * np.full_like(original_img, yellow) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 7, alpha * np.full_like(original_img, purple) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 8, alpha * np.full_like(original_img, orange) + (1 - alpha) * original_img,
-                            original_img)
+    original_img = np.where(pred == 1, alpha * np.full_like(original_img, blue) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 2, alpha * np.full_like(original_img, green) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 3, alpha * np.full_like(original_img, red) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 4, alpha * np.full_like(original_img, cyan) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 5, alpha * np.full_like(original_img, pink) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 6, alpha * np.full_like(original_img, yellow) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 7, alpha * np.full_like(original_img, purple) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 8, alpha * np.full_like(original_img, orange) + (1 - alpha) * original_img, original_img)
 
-    original_img = np.where(pred == 9, alpha * np.full_like(original_img, color_1) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 10, alpha * np.full_like(original_img, color_2) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 11, alpha * np.full_like(original_img, color_3) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 12, alpha * np.full_like(original_img, color_4) + (1 - alpha) * original_img,
-                            original_img)
-    original_img = np.where(pred == 13, alpha * np.full_like(original_img, color_5) + (1 - alpha) * original_img,
-                            original_img)
-    # print(f' max: {original_img.max()}, min: {original_img.min()}')
+    original_img = np.where(pred == 9, alpha * np.full_like(original_img, color_1) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 10, alpha * np.full_like(original_img, color_2) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 11, alpha * np.full_like(original_img, color_3) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 12, alpha * np.full_like(original_img, color_4) + (1 - alpha) * original_img, original_img)
+    original_img = np.where(pred == 13, alpha * np.full_like(original_img, color_5) + (1 - alpha) * original_img, original_img)
+    print(f' max: {original_img.max()}, min: {original_img.min()}')
     original_img = cv2.cvtColor(original_img.astype(np.float32), cv2.COLOR_BGR2RGB)
     cv2.imwrite(save_path, original_img)
-
 
 def colorful(mask, colormap):
     color_mask = np.zeros([mask.shape[0], mask.shape[1], 3])

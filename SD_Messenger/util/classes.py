@@ -39,4 +39,5 @@ CLASSES = {'pascal': ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bot
             'sgcm': ['background', 'foreground'],
             'amos': ['background', 'Spleen', 'Right kidney', 'Left kidney', 'Gallbladder', 'Esophagus', 'Liver',
                        'Stomach', 'Aorta', 'Inferior vena cava', 'Pancreas', 'Right adrenal gland', 'Left adrenal gland', 'Du', 'Bl', 'Pu'],
+            'auditory': ['brain', 'tumor'],
            }

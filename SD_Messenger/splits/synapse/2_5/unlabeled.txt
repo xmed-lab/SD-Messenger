@@ -1,0 +1,1 @@
+synapse_or/img0040.nii.gz_57.png synapse_anno/label0040.nii.gz_57.png

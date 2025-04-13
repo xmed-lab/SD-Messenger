@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2023/9/28 09:14
-# @Author  : Qixiang ZHANG
-# @File    : mask_decoder.py
-# @Software: PyCharm
+# @Time    : 2024/1/15 09:14
+# @Author  : Qixiang Zhang
+# @File    : sd_messenger.py
+# @Software: VSCode
 
 import numpy as np
 import torch
@@ -14,7 +14,7 @@ import math
 from mmcv.cnn import ConvModule
 
 
-class CrossAttn(nn.Module):
+class CrossAttnMem(nn.Module):
     def __init__(self, num_heads, embedding_channels, attention_dropout_rate, num_class, patch_num):
         super().__init__()
         self.KV_size = embedding_channels * num_heads
@@ -103,14 +103,14 @@ class CrossAttn(nn.Module):
         out = torch.cat([O_l_u, O_u_u], dim=0)
         return out
 
-class SDMessenger(nn.Module):
+class U2LModule(nn.Module):
     def __init__(self, num_layers, num_heads, embedding_channels, channel_num, channel_num_out, patchSize, scale,
-                 dropout_rate, attention_dropout_rate, num_class, patch_num, add_cross_attn=[False, False, False, False]):
+                 dropout_rate, attention_dropout_rate, num_class, patch_num):
         super().__init__()
         self.map_in = nn.Sequential(nn.Conv2d(channel_num, embedding_channels, kernel_size=1, padding=0), nn.GELU())
 
         self.attn_norm = LayerNorm(embedding_channels, eps=1e-6)
-        self.attn = CrossAttn(num_heads, embedding_channels, attention_dropout_rate, num_class, patch_num)
+        self.attn = CrossAttnMem(num_heads, embedding_channels, attention_dropout_rate, num_class, patch_num)
 
         # self.ffn_norm1 = LayerNorm(embedding_channels, eps=1e-6)
         # self.ffn1 = Mlp(embedding_channels, embedding_channels * 4, dropout_rate)
@@ -153,47 +153,62 @@ class SDMessenger(nn.Module):
         return out
 
 
-class SDMessengerTransformer(nn.Module):
-    """
-    SegFormer V16: cross attn with memory bank storing unlabeled data
-    """
+class SDMessenger(nn.Module):
 
     def __init__(self, num_layers, num_heads, num_class, in_planes, image_size, add_cross_attn=[True, True, True, True]):
-        super(SDMessengerTransformer, self).__init__()
+        super(SDMessenger, self).__init__()
 
         embedding_dim = 768
 
-        self.sd_messenger = SDMessenger(num_layers=num_layers, num_heads=num_heads,
-                               embedding_channels=in_planes[3],
-                               channel_num=in_planes[3],
-                               channel_num_out=in_planes[3],
-                               patchSize=1, scale=1,
-                               dropout_rate=0.5, attention_dropout_rate=0.1,
-                               patch_num=(image_size // 32 + 1) ** 2, num_class=num_class)
-        
         self.add_cross_attn = add_cross_attn
+
+        if add_cross_attn[0]:
+            self.u2l_module_0 = U2LModule(num_layers=num_layers, num_heads=num_heads,
+                                embedding_channels=in_planes[0],
+                                channel_num=in_planes[0],
+                                channel_num_out=in_planes[0],
+                                patchSize=1, scale=1,
+                                dropout_rate=0.5, attention_dropout_rate=0.1,
+                                patch_num=(image_size // 32 + 1) ** 2, num_class=num_class)
+        if add_cross_attn[1]:
+            self.u2l_module_1 = U2LModule(num_layers=num_layers, num_heads=num_heads,
+                                embedding_channels=in_planes[1],
+                                channel_num=in_planes[1],
+                                channel_num_out=in_planes[1],
+                                patchSize=1, scale=1,
+                                dropout_rate=0.5, attention_dropout_rate=0.1,
+                                patch_num=(image_size // 32 + 1) ** 2, num_class=num_class)
+        if add_cross_attn[2]:
+            self.u2l_module_2 = U2LModule(num_layers=num_layers, num_heads=num_heads,
+                                embedding_channels=in_planes[2],
+                                channel_num=in_planes[2],
+                                channel_num_out=in_planes[2],
+                                patchSize=1, scale=1,
+                                dropout_rate=0.5, attention_dropout_rate=0.1,
+                                patch_num=(image_size // 32 + 1) ** 2, num_class=num_class)
+        if add_cross_attn[3]:
+            self.u2l_module_3 = U2LModule(num_layers=num_layers, num_heads=num_heads,
+                                embedding_channels=in_planes[3],
+                                channel_num=in_planes[3],
+                                channel_num_out=in_planes[3],
+                                patchSize=1, scale=1,
+                                dropout_rate=0.5, attention_dropout_rate=0.1,
+                                patch_num=(image_size // 32 + 1) ** 2, num_class=num_class)
 
         self.decoder = SegFormerHead(embedding_dim, in_planes, num_class)
 
     def forward(self, feats, h, w):
-        e1, e2, e3, e4 = feats
-        print(f'e1 shape: {e1.shape}, e2 shape: {e2.shape}, e3 shape: {e3.shape}, e4 shape: {e4.shape}')
+        e0, e1, e2, e3 = feats
 
-        # Transformer encoder with U2L delivery
-        if self.add_cross_attn[0]:
-            e1 = self.sd_messenger(e1)
-        if self.add_cross_attn[1]:
-            e2 = self.sd_messenger(e2)
-        if self.add_cross_attn[2]:
-            e3 = self.sd_messenger(e3)
-        if self.add_cross_attn[3]:
-            e4 = self.sd_messenger(e4)
+        e3_u2l = self.u2l_module_3(e3) if self.add_cross_attn[3] else e3
+        e2_u2l = self.u2l_module_2(e2) if self.add_cross_attn[2] else e2
+        e1_u2l = self.u2l_module_1(e1) if self.add_cross_attn[1] else e1
+        e0_u2l = self.u2l_module_0(e0) if self.add_cross_attn[0] else e0
 
-        # segmentation decoder
-        out = self.decoder(e1, e2, e3, e4)
+        out = self.decoder(e0_u2l, e1_u2l, e2_u2l, e3_u2l)
         out = F.interpolate(out, size=(h, w), mode="bilinear", align_corners=False)
 
-        return out, e4
+        return out, e3_u2l
 
 
 class MLP(nn.Module):

@@ -38,8 +38,8 @@ def cutmix_segmentation(images_a, masks_a, images_b, masks_b, cut_mix_size):
     if foreground_area[2] - foreground_area[0] > cut_mix_size and foreground_area[3] - foreground_area[1] > cut_mix_size:
         height, width = images_a.shape[1], images_a.shape[2]
 
-        cut_h = np.int(cut_mix_size)
-        cut_w = np.int(cut_mix_size)
+        cut_h = np.int64(cut_mix_size)
+        cut_w = np.int64(cut_mix_size)
 
         cx = np.random.randint(low=foreground_area[0], high=foreground_area[2])
         cy = np.random.randint(low=foreground_area[1], high=foreground_area[3])

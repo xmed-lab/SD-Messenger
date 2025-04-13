@@ -248,7 +248,7 @@ class RandomCrop(AbstractTransform):
         if label.shape[0] <= self.output_size[0] or label.shape[1] <= self.output_size[1]:
             pw = max((self.output_size[0] - label.shape[0]) // 2 + 2, 0)
             ph = max((self.output_size[1] - label.shape[1]) // 2 + 2, 0)
-
+            # print(f'ph: {ph}, pw: {pw}, image shape: {image.shape}, label shape: {label.shape}')
             image = np.pad(image, [(pw, pw), (ph, ph)], mode='constant', constant_values=0)
             label = np.pad(label, [(pw, pw), (ph, ph)], mode='constant', constant_values=0)
 
