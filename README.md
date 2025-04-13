@@ -107,7 +107,7 @@ bash scripts/train_mmwhs.sh ${GPU_NUM} ${PORT}
 bash scripts/train_mm.sh ${GPU_NUM} ${PORT}
 ```
 
-- Train S&D-Messenger on Synapse, LASeg, MMWHS, M&Ms datasets:
+- Evaluate our S&D-Messenger on Synapse, LASeg, MMWHS, M&Ms datasets:
 ```shell
 # Synapse Dataset
 bash scripts/test_synapse.sh ${GPU_NUM} ${CHECKPOINT_PATH}
@@ -184,8 +184,8 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 				<td><a href="#">log</a></td>
         <td><a href="#">log</a></td>
     </tr>
-
 </table>
+:information_source: Please note that the released model weights may perform slightly better than the results reported in the paper, as the reported numbers reflect the average performance across five experimental runs for each setting.
 
 ## :dart: Results
 ![fig_1](./figs/fig_1.jpg "fig_1")
