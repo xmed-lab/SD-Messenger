@@ -17,7 +17,7 @@ Image Segmentation </h1>
 ## :rocket: Updates & Todo List
 :bangbang: IMPORTANT: This version is not the final version. There are still a lot of todos. We will release the final version ASAP. Sorry for any inconvenience this may cause.
 - [x] Create the repository and the ReadMe Template
-- [ ] Release the training and testing codes for S&D-Messenger
+- [x] Release the training and testing codes for S&D-Messenger
 - [ ] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms, AMOS)
 - [ ] Release the model weights for Synapse dataset (20%, 40% labeled)
 - [ ] Release the model weights for MMWHS (CT2MRI, MRI2CT)
@@ -59,16 +59,16 @@ Download the pre-processed datasets and splits from the following links:
         <td colspan="2"><a href="https://arxiv.org/abs/2004.12314">Link</a></td>
     </tr>
     <tr align="center">
-        <td>Pre-processed Numpy</td>
+        <td>Numpy</td>
         <td colspan="2"><a href="#">Link</a></td>
         <td colspan="2"><a href="#">Link</a></td>
         <td colspan="4"><a href="#">Link</a></td>
         <td colspan="2"><a href="#">Link</a></td>
     </tr>
     <tr align="center">
-        <td>Split Files</td>
-        <td><a href="#">20%</a></td>
-        <td><a href="#">40%</a></td>
+        <td>Splits</td>
+        <td><a href="./SD_Messenger/splits/synapse/1_5/">20%</a></td>
+        <td><a href="./SD_Messenger/splits/synapse/2_5/">40%</a></td>
         <td><a href="#">CT2MRI</a></td>
         <td><a href="#">MRI2CT</a></td>
         <td><a href="#">Domain A</a></td>
