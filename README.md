@@ -150,8 +150,8 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
     </tr>
     <tr align="center">
         <td> DICE (%)</td>
-        <td>64.46</td>
-        <td>68.07</td>
+        <td>68.38</td>
+        <td>71.53</td>
         <td>77.0</td>
         <td>91.4</td>
         <td>86.50</td>
