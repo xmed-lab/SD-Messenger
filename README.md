@@ -5,10 +5,6 @@ Image Segmentation </h1>
 </div>
 <div align=center>
 
-<a src="https://img.shields.io/badge/%F0%9F%93%96-ICCV_2023-red.svg?style=flat-square" href="https://arxiv.org/abs/2407.07763">
-<img src="https://img.shields.io/badge/build-AcceptWithMinor-brightgreen?style=flat-square&label=TMI&color=red">
-</a>
-
 <a src="https://img.shields.io/badge/%F0%9F%9A%80-xmed_Lab-ed6c00.svg?style=flat-square" href="https://xmengli.github.io/">
 <img src="https://img.shields.io/badge/%F0%9F%9A%80-xmed_Lab-ed6c00.svg?style=flat-square">
 </a>
@@ -19,7 +15,8 @@ Image Segmentation </h1>
 - [x] Create the repository and the ReadMe Template
 - [x] Release the training and testing codes for S&D-Messenger
 - [x] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms)
-- [ ] Release the model weights for Synapse dataset (20%, 40% labeled)
+- [x] Release the model weights and the log for 20% Synapse dataset
+- [ ] Release the model weights for 40% Synapse dataset
 - [ ] Release the model weights for MMWHS (CT2MRI, MRI2CT)
 - [ ] Release the model weights for LASeg (5%, 10%)
 - [ ] Release the model weights for M&Ms (Domain A, Domain B, Domain C, Domain D)
