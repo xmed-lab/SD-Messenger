@@ -82,13 +82,20 @@ Download the pre-processed datasets and splits from the following links:
 
 
 - Place the split files in ./splits
-- Specify the dataset root path in the config files
+- unzip the dataset files
+```shell
+unzip synapse.zip
+unzip MMWHS.zip
+unzip MNMS.zip
+unzip la_seg.zip
+```
+- Specify the dataset root path in the [config](./SD_Messenger/configs) files
 
 ## :key: Train and Evaluate S&D-Messenger
 
 - Train S&D-Messenger on Synapse, LASeg, MMWHS, M&Ms datasets:
    - Place the dataset and split files in the corresponding folder path
-   - The model of S&D-Messenger is defined in [./SD_Messenger/model](./src/model), with a backbone, and a SDMessengerTransformer
+   - The model of S&D-Messenger is defined in [./SD_Messenger/model](./SD_Messenger/model), with a backbone, and a SDMessengerTransformer
    - You can train S&D-Messenger on different datasets
 ```shell
 cd ./SD_Messenger
