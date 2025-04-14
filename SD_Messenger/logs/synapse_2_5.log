@@ -8479,7 +8479,3 @@ unexpected key in source state_dict: head.weight, head.bias
 [2025-04-14 11:13:10,039][    INFO] ***** Evaluation ***** >>>> Class [12 Right adrenal gland] DICE: 30.94
 [2025-04-14 11:13:10,039][    INFO] ***** Evaluation ***** >>>> Class [13 Left adrenal gland] DICE: 35.57
 [2025-04-14 11:13:10,039][    INFO] ***** Evaluation original ***** >>>> Mean DICE: 70.58
-
-[2025-04-14 11:13:11,389][    INFO] ===========> Epoch: 201, LR: 0.00037, Previous best: 58.57/71.72 in Epoch 195
-[2025-04-14 11:13:15,617][    INFO] Iters: 0, Total loss: 0.079, Loss x: 0.032, Loss w_fp: 0.187, Loss consistency: 0.019277
-[2025-04-14 11:14:05,584][    INFO] Iters: 25, Total loss: 0.045, Loss x: 0.030, Loss w_fp: 0.087, Loss consistency: 0.018757
