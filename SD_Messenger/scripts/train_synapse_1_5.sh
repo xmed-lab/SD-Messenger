@@ -1,7 +1,7 @@
 #!/bin/bash
 dataset='synapse'
 method='train_synapse'
-config='synapse'
+config='synapse_1_5'
 split='1_5'
 now=$(date +"%Y%m%d_%H%M%S")
 config=configs/${config}.yaml

@@ -98,7 +98,9 @@ unzip la_seg.zip
 cd ./SD_Messenger
 
 # Synapse Dataset
-bash scripts/train_synapse.sh ${GPU_NUM} ${PORT}
+bash scripts/train_synapse_1_5.sh ${GPU_NUM} ${PORT}    # 20% labeled
+bash scripts/train_synapse_2_5.sh ${GPU_NUM} ${PORT}    # 40% labeled
+
 # LASeg Dataset
 bash scripts/train_laseg.sh ${GPU_NUM} ${PORT}
 # MMWHS Dataset
@@ -110,7 +112,9 @@ bash scripts/train_mm.sh ${GPU_NUM} ${PORT}
 - Evaluate our S&D-Messenger on Synapse, LASeg, MMWHS, M&Ms datasets:
 ```shell
 # Synapse Dataset
-bash scripts/test_synapse.sh ${GPU_NUM} ${CHECKPOINT_PATH}
+bash scripts/test_synapse_1_5.sh ${GPU_NUM} ${CHECKPOINT_PATH}    # 20% labeled
+bash scripts/test_synapse_2_5.sh ${GPU_NUM} ${CHECKPOINT_PATH}    # 40% labeled
+
 # LASeg Dataset
 bash scripts/test_laseg.sh ${GPU_NUM} ${CHECKPOINT_PATH}
 # MMWHS Dataset
@@ -161,7 +165,7 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
    <tr align="center">
         <td> Model Weights </td>
         <td><a href="https://hkustconnect-my.sharepoint.com/:u:/g/personal/qzhangcq_connect_ust_hk/EUoLLi0XMq5Kp4pvE0XcMaMBq-BESh_kdgDqVatvn5wjvw?e=QIFhhf">weight</a></td>
-        <td><a href="#">weight</a></td>
+        <td><a href="https://hkustconnect-my.sharepoint.com/:u:/g/personal/qzhangcq_connect_ust_hk/EYvfHlLKKvtClMDp0yy6yE8BYgefqZsvcppYpCbUDj9hvQ?e=eFBLsY">weight</a></td>
         <td><a href="#">weight</a></td>
         <td><a href="#">weight</a></td>
         <td><a href="#">weight</a></td>
@@ -174,7 +178,7 @@ bash scripts/test_mm.sh ${GPU_NUM} ${CHECKPOINT_PATH}
   <tr align="center">
         <td> Training Logs </td>
         <td><a href="./SD_Messenger/logs/synapse_1_5.log">log</a></td>
-        <td><a href="#">log</a></td>
+        <td><a href="./SD_Messenger/logs/synapse_2_5.log">log</a></td>
         <td><a href="#">log</a></td>
         <td><a href="#">log</a></td>
         <td><a href="#">log</a></td>
