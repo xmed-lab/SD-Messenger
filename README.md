@@ -15,11 +15,11 @@ Image Segmentation </h1>
 - [x] Create the repository and the ReadMe Template
 - [x] Release the training and testing codes for S&D-Messenger
 - [x] Release the pre-processed datasets (Synapse, MMWHS, LASeg, M&Ms)
-- [x] Release the model weights and the log for 20% Synapse dataset
-- [ ] Release the model weights for 40% Synapse dataset
-- [ ] Release the model weights for MMWHS (CT2MRI, MRI2CT)
-- [ ] Release the model weights for LASeg (5%, 10%)
-- [ ] Release the model weights for M&Ms (Domain A, Domain B, Domain C, Domain D)
+- [x] Release the model weights and the logs for 20% Synapse dataset
+- [x] Release the model weights and the logs for 40% Synapse dataset
+- [ ] Release the model weights and the logs for MMWHS (CT2MRI, MRI2CT)
+- [ ] Release the model weights and the logs for LASeg (5%, 10%)
+- [ ] Release the model weights and the logs for M&Ms (Domain A, Domain B, Domain C, Domain D)
 
 ## :star: Introduction
 ![framework](./figs/framework.png "framework")
